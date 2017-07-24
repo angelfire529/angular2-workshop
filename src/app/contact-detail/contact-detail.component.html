@@ -1,0 +1,26 @@
+<form *ngIf="contact" (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <div class="form-group">
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="First Name" type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]="contact.firstName" #name="ngModel" required>
+    </md-input-container>
+  </div>
+  <div class="form-group">
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Last Name" type="text" name="lastName" id="lastName" class="form-control" [(ngModel)]="contact.lastName" #name="ngModel" required>
+    </md-input-container>
+  </div>
+  <div class="form-group">
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Email" type="text" name="email" id="email" class="form-control" [(ngModel)]="contact.email" #name="ngModel" required>
+    </md-input-container>
+  </div>
+    <div class="form-group">
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Phone Number" type="text" name="phone" id="phone" class="form-control" [(ngModel)]="contact.phone" #name="ngModel" required>
+    </md-input-container>
+  </div>
+  <div>
+    <button md-raised-button (click)="goBack()">Back</button>
+    <button md-raised-button type="submit" color="primary" [disabled]="myForm.invalid || myForm.pristine">Submit</button>
+  </div>
+</form>

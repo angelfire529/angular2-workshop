@@ -1,0 +1,7 @@
+<ul>
+
+<ul>
+  <li *ngFor="let contact of contacts | async" >
+    <a md-button [routerLink]="['/contact-details', contact.$key]">{{contact.firstName}} {{contact.lastName}}</a>
+    </li>
+</ul>
